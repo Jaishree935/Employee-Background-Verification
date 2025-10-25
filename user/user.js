@@ -64,3 +64,26 @@ function logout() {
 }
 
 if (document.getElementById("statusList")) loadUserDashboard();
+
+function applyCard(company, role, qualification, experience) {
+  const uname = localStorage.getItem("currentUser");
+  if (!uname) {
+    alert("Please log in first!");
+    window.location.href = "user_login.html";
+    return;
+  }
+
+  const applications = JSON.parse(localStorage.getItem("applications")) || [];
+  applications.push({
+    username: uname,
+    company,
+    role,
+    qualification,
+    experience,
+    status: "Pending Verification"
+  });
+  localStorage.setItem("applications", JSON.stringify(applications));
+
+  alert(`You have successfully applied for ${role} at ${company}!`);
+  window.location.href = "user_dashboard.html";
+}
