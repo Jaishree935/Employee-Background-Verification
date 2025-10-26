@@ -14,7 +14,7 @@ body {
 }
 
 
-/* 🌟 HEADER */
+/* HEADER */
 header {
   background: linear-gradient(90deg, #6b35d0, #8b54ff, #ff8a00);
 
@@ -88,7 +88,7 @@ nav a:hover {
 }
 
 
-/* 💼 JOB SECTION */
+/* JOB SECTION */
 .job-section {
   text-align: center;
   padding: 60px 20px;
@@ -148,7 +148,7 @@ nav a:hover {
   background: linear-gradient(90deg, #7a3ffc, #a178ff);
 }
 
-/* 💎 ABOUT & CONTACT SECTION (Enhanced Professional Look) */
+/* ABOUT & CONTACT SECTION (Enhanced Professional Look) */
 .about-section, .contact-section {
   display: none;
   padding: 80px 20px;
@@ -259,7 +259,7 @@ nav a:hover {
   background: #fff;
 }
 
-/* 🦶 FOOTER */
+/*  FOOTER */
 
 footer {
  background: linear-gradient(90deg, #6b35d0, #8b54ff, #ff8a00);
@@ -288,7 +288,7 @@ footer {
   text-align: center;
 }
  
-/* 🌐 Social Media Icons - Make Smaller */
+/*Social Media Icons - Make Smaller */
 .social-section img {
   width: 28px;     /* adjust size (try 24px or 30px if needed) */
   height: 28px;
