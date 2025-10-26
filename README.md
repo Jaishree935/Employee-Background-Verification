@@ -31,12 +31,19 @@ User Side Features:
 Admin Side Features:
 
 1.Admin Login Panel
+
     -Secure access for admin to manage user data.
+
 2.View All Applications
+
     -Displays users, companies applied, and current status.
+
 3.Update Verification Status
+ 
     -Admin can change “Pending” → “Verified” or “Rejected”.
+
 4.Data Persistence
+ 
     -Communicates with backend database for user/application data.
 
 Tech Stack Used:
@@ -62,11 +69,12 @@ Key Functional Highlights:
 
 Project Completion Summary:
 
-Module	                             Completion
-Frontend (User Interface)	           100%
-User Login & Register Integration	   100%
-Job Apply + Dashboard                100%
-Admin Dashboard UI	                 90% (Backend linkage pending)
-Backend (Node + MongoDB)	           In progress / API integrated partially
-Overall Project Completion	         ~90–95% completed
+
+    Module	                             Completion
+    Frontend (User Interface)	           100%
+    User Login & Register Integration	   100%
+    Job Apply + Dashboard                  100%
+    Admin Dashboard UI	                   90% (Backend linkage pending)
+    Backend (Node + MongoDB)	           In progress / API integrated partially
+    Overall Project Completion	           ~90–95% completed
 
