@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard | Employee Background Check</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script defer src="admin_dashboard.js"></script>
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f6f8ff;
+      min-height: 100vh;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      background: #4c28d4;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 60px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    header button {
+      background: #ff8a00;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 25px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 15px;
+    }
+
+    header button:hover {
+      background: #ffb100;
+      transform: translateY(-2px);
+    }
+
+    /* Dashboard */
+    .dashboard {
+      flex-grow: 1;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .dashboard h2 {
+      font-size: 30px;
+      color: #4c28d4;
+      font-weight: 700;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .dashboard h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #ff8a00;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    #applicationList {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+
+    .app-card {
+      background: #fff;
+      padding: 25px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 360px;
+      transition: all 0.3s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .app-card p {
+      margin: 10px 0;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .app-card b {
+      color: #4c28d4;
+    }
+
+    .app-card button {
+      margin: 8px 6px 0;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    .verify-btn {
+      background: #00c853;
+      color: #fff;
+    }
+
+    .verify-btn:hover {
+      background: #00e676;
+    }
+
+    .select-btn {
+      background: #2962ff;
+      color: #fff;
+    }
+
+    .select-btn:hover {
+      background: #448aff;
+    }
+
+    /* Footer */
+    footer {
+      background: #4c28d4;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Admin Dashboard</h1>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <div class="dashboard">
+    <h2>Applications</h2>
+    <div id="applicationList">
+      <!-- Application cards appear dynamically -->
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Employee Background Check. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

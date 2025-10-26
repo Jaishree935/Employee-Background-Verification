@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #6b35d0, #9b6bff, #ff8a00, #7b4fff);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .main-heading {
+  text-align: left;
+  font-size: 36px;
+  color: #ffeb3b;
+  text-shadow: 0 0 15px rgba(0,0,0,0.3);
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2; /* ensures text is nicely spaced */
+}
+
+.main-heading .highlight {
+  display: inline; /* keep it inline, same line as "Employee" */
+  color: #00fff0;  /* different color for emphasis */
+  font-weight: 700;
+}
+
+    .login-container {
+      background: rgba(255,255,255,0.15);
+      padding: 50px 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 350px;
+      color: #fff;
+    }
+    .login-container h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      font-weight: 600;
+      color: #ffeb3b;
+      text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .login-container input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .login-container input::placeholder {
+      color: #e0e0e0;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(90deg, #6b35d0, #8a52ff);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(107, 53, 208, 0.4);
+    }
+    .login-container button:hover {
+      background: linear-gradient(90deg, #ff8a00, #7b4fff);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 138, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <h1 class="main-heading">
+    Employee <span class="highlight">Background Check</span>
+  </h1>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <input type="text" id="adminUser" placeholder="Admin Username">
+    <input type="password" id="adminPass" placeholder="Admin Password">
+    <button onclick="adminLogin()">Login</button>
+  </div>
+</body>
+</html>
