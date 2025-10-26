@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- ✅ HEADER -->
+  <!-- HEADER -->
   <header>
     <div class="logo-container">
       <img src="/images/logo.jpg" alt="CareerConnect Logo" class="header-logo">
@@ -36,7 +36,7 @@
 
   </header>
 
-  <!-- ✅ JOB SECTION -->
+  <!-- JOB SECTION -->
   <section class="job-section" id="home">
     <h2 class="job-heading">Available Job Opportunities</h2>
      <div class="job-actions">
@@ -44,7 +44,6 @@
     <button class="status-btn" onclick="checkLoginAndRedirect()">Application Status</button>
   </div>
     <div class="job-container">
-    <!-- Example job cards (existing) -->
       <div class="job-card" data-company="Microsoft">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo">
         <h3>Microsoft</h3>
@@ -199,7 +198,7 @@
     </div>
   </section>
 
-  <!-- ✅ ABOUT SECTION -->
+  <!-- ABOUT SECTION -->
   <section class="about-section" id="about">
     <div class="about-container">
       <h2>About CareerConnect</h2>
@@ -210,7 +209,7 @@
     </div>
   </section>
 
-  <!-- ✅ CONTACT SECTION -->
+  <!--  CONTACT SECTION -->
   <section class="contact-section" id="contact">
     <div class="contact-container">
       <h2>Contact Us / Feedback</h2>
@@ -227,7 +226,7 @@
     </div>
   </section>
 
-  <!-- ✅ FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-container">
       <div class="footer-section">
@@ -256,7 +255,7 @@
     <p class="copy">© 2025 Employee Background Check Application. All Rights Reserved.</p>
   </footer>
 
-  <!-- ✅ SCRIPT -->
+  <!-- SCRIPT -->
   <script>
     function showSection(section) {
       document.querySelectorAll("section").forEach(s => s.style.display = "none");
@@ -277,7 +276,7 @@ function isUserLoggedIn() {
   return localStorage.getItem("currentUser") !== null;
 }
 
-// 🟢 Search company filter
+// Search company filter
 document.getElementById("searchBox").addEventListener("keyup", function () {
   const query = this.value.toLowerCase();
   const currentUser = localStorage.getItem("currentUser");
@@ -294,7 +293,7 @@ document.getElementById("searchBox").addEventListener("keyup", function () {
   });
 });
 
-// 🟣 Redirect to dashboard (only if logged in)
+// Redirect to dashboard (only if logged in)
 function checkLoginAndRedirect() {
   if (!isUserLoggedIn()) {
     alert("Please login to view application status!");
@@ -304,7 +303,7 @@ function checkLoginAndRedirect() {
   }
 }
 
-// ✅ Modify Apply Buttons to require login
+// Modify Apply Buttons to require login
 document.querySelectorAll(".apply-btn").forEach(button => {
   button.addEventListener("click", function() {
     const currentUser = localStorage.getItem("currentUser");
@@ -339,7 +338,7 @@ document.querySelectorAll(".apply-btn").forEach(button => {
 function goToLogin() {
   window.location.href = "user_login.html";
 }
- // 🟢 Handle user icon click
+ // Handle user icon click
 document.getElementById("userIcon").addEventListener("click", async () => {
   const currentUser = localStorage.getItem("currentUser");
 
@@ -366,12 +365,12 @@ document.getElementById("userIcon").addEventListener("click", async () => {
   }
 });
 
-// 🔴 Close popup
+// Close popup
 function closePopup() {
   document.getElementById("userInfoPopup").style.display = "none";
 }
 
-// ✅ Change login button to logout if user logged in
+// Change login button to logout if user logged in
 window.onload = function() {
   const currentUser = localStorage.getItem("currentUser");
   const loginBtn = document.getElementById("loginBtn");
