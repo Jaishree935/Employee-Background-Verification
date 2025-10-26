@@ -8,25 +8,39 @@ It provides a two-sided interface – one for job seekers (users) and another fo
 User Side Features:
 
 1.User Registration & Login (MongoDB Backend)
+
     -Users can create an account and log in securely.
     -Authentication handled through backend API (http://localhost:5000).
+    
 2.Job Listings & Search Filter
+
     -Displays job cards for 12+ top companies (Microsoft, Google, Amazon, etc.).
     -Real-time search bar filters jobs by company name.
     -Access restricted to logged-in users. 
+    
 3.Job Application Submission
+
     -Users can apply for multiple jobs.
     -Application details stored in localStorage.
     -Duplicate applications are prevented. 
+    
 4.Application Dashboard
+
     -Displays applied jobs and current status (“Pending Verification”).
     -Encourages transparency and user engagement.
+    
 5.User Profile Popup
+
     -Fetches and displays user data (username, email) from backend API.
+    
 6.Contact & Feedback Section
+
     -Collects user feedback with instant acknowledgment pop-up.
+    
 7.Dynamic Login/Logout Button
+
     -Login button auto-changes to Logout when user session is active.
+    
 
 Admin Side Features:
 
@@ -48,13 +62,15 @@ Admin Side Features:
 
 Tech Stack Used:
 
-Layer	                Technology
-Frontend	            HTML5, CSS3, JavaScript
-Styling & Icons	      Google Fonts, Font Awesome
-Backend	              Node.js(MongoDB Connection)
-Database	            MongoDB (for users and applications)
-Storage (Temporary)	  localStorage for session & applications
-Server Communication	Fetch API (HTTP Requests) 
+
+    Layer	                Technology
+   
+    Frontend	            HTML5, CSS3, JavaScript
+    Styling & Icons	        Google Fonts, Font Awesome
+    Backend	                Node.js(MongoDB Connection)
+    Database	            MongoDB (for users and applications)
+    Storage (Temporary)	    localStorage for session & applications
+    Server Communication	Fetch API (HTTP Requests) 
 
 
 Key Functional Highlights:
