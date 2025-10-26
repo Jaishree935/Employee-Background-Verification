@@ -1,0 +1,394 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  color: #333;
+  min-height: 100vh;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* 🌟 HEADER */
+header {
+  background: linear-gradient(90deg, #6b35d0, #8b54ff, #ff8a00);
+
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-logo {
+  height: 45px;
+  border-radius: 8px;
+}
+.logo-text {
+  font-size: 26px;
+  font-weight: 700;
+}
+nav a {
+  color: #fff;
+  margin: 0 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+nav a:hover {
+  color: #ffd700;
+}/* 🌟 User Icon + Login Button in Header */
+.user-icon-login {
+  display: flex;
+  align-items: center;
+  gap: 20px;                 /* space between icon and button */
+  font-size: 24px;
+}
+
+.user-icon-login i {
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-icon-login i:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+.user-icon-login .login-btn {
+  background: linear-gradient(90deg, #6b35d0, #8a52ff);
+  border: none;
+  border-radius: 25px;
+  padding: 6px 18px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-icon-login .login-btn:hover {
+  background: linear-gradient(90deg, #7a3ffc, #a178ff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(90, 46, 166, 0.25);
+}
+
+
+/* 💼 JOB SECTION */
+.job-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+.job-heading {
+  font-family: "Orbitron", sans-serif;
+  font-size: 42px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ff8a00, #7b4fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(123, 79, 255, 0.2);
+  margin-bottom: 50px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.job-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.job-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  border-top: 5px solid #7b4fff;
+}
+.job-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(90, 46, 166, 0.25);
+}
+.job-card img {
+  height: 60px;
+  margin-bottom: 15px;
+}
+.job-card button {
+  background: linear-gradient(90deg, #6b35d0, #8a52ff);
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.job-card button:hover {
+  background: linear-gradient(90deg, #7a3ffc, #a178ff);
+}
+
+/* 💎 ABOUT & CONTACT SECTION (Enhanced Professional Look) */
+.about-section, .contact-section {
+  display: none;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f3f0ff 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft gradient overlay for depth */
+.about-section::before, .contact-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(123, 79, 255, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+.about-section::after, .contact-section::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 180px;
+  height: 180px;
+  background: rgba(90, 46, 166, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Container styling */
+.about-container, .contact-container {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 50px 60px;
+  box-shadow: 0 10px 30px rgba(90, 46, 166, 0.15);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+.about-container:hover, .contact-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Section Heading */
+.about-container h2, .contact-container h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #5a2ea6;
+  margin-bottom: 25px;
+  position: relative;
+}
+.about-container h2::after, .contact-container h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #6b35d0, #ff8a00);
+  margin: 12px auto 0;
+  border-radius: 3px;
+}
+
+/* About text styling */
+.about-container p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin-top: 20px;
+  text-align: justify;
+}
+.close-btn, .submit-btn {
+  background: linear-gradient(90deg, #6b35d0, #8a52ff);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 10px 25px;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.3s;
+}
+.close-btn:hover, .submit-btn:hover {
+  background: linear-gradient(90deg, #7a3ffc, #a178ff);
+}
+/* Contact form */
+.feedback-form {
+  margin-top: 25px;
+}
+
+.feedback-form input, .feedback-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #d0c5f0;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: #fdfcff;
+}
+.feedback-form input:focus, .feedback-form textarea:focus {
+  outline: none;
+  border-color: #7b4fff;
+  box-shadow: 0 0 5px rgba(123, 79, 255, 0.3);
+  background: #fff;
+}
+
+/* 🦶 FOOTER */
+
+footer {
+ background: linear-gradient(90deg, #6b35d0, #8b54ff, #ff8a00);
+
+  color: white;
+  padding: 20px 40px;   /* ⬅ Reduced height */
+  font-size: 15px;
+  margin-top: 50px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  flex-wrap: wrap;
+}
+.footer-line {
+  width: 80px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 15px auto 5px;
+}
+.copy {
+  font-size: 12px;
+  text-align: center;
+}
+ 
+/* 🌐 Social Media Icons - Make Smaller */
+.social-section img {
+  width: 28px;     /* adjust size (try 24px or 30px if needed) */
+  height: 28px;
+  margin: 0 8px;
+  border-radius: 50%; /* keeps them round if the image allows */
+  transition: 0.3s;
+}
+
+.social-section img:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* Submit & Close buttons */
+.submit-btn, .close-btn {
+  background: linear-gradient(90deg, #6b35d0, #8a52ff);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  margin-top: 15px;
+}
+.submit-btn:hover, .close-btn:hover {
+  background: linear-gradient(90deg, #7a3ffc, #a178ff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(90, 46, 166, 0.25);
+}
+@media (max-width: 768px) {
+  .about-container, .contact-container {
+    padding: 30px 25px;
+  }
+  .about-container h2, .contact-container h2 {
+    font-size: 26px;
+  }
+}
+
+.job-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  gap: 15px;
+}
+
+#searchBox {
+  width: 40%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 2px solid #6b35d0;
+  font-size: 16px;
+  outline: none;
+}
+
+.status-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #6b35d0, #8a52ff);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.status-btn:hover {
+  background: linear-gradient(90deg, #ff8a00, #7b4fff);
+}
+.popup {
+  display: none;
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  background-color: white;
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+  padding: 15px;
+  width: 280px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.popup p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.popup button {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background: #357ABD;
+}
