@@ -1,16 +1,16 @@
-// 🌟 Show registration form
+// Show registration form
 function showRegisterForm() {
   document.getElementById("loginForm").style.display = "none";
   document.getElementById("registerForm").style.display = "block";
 }
 
-// 🌟 Show login form
+// Show login form
 function showLoginForm() {
   document.getElementById("loginForm").style.display = "block";
   document.getElementById("registerForm").style.display = "none";
 }
 
-// 🟣 Register using MongoDB backend
+// Register using MongoDB backend
 async function registerUserForm() {
   const uname = document.getElementById("newUsername").value.trim();
   const email = document.getElementById("newEmail").value.trim();
