@@ -116,7 +116,7 @@
 </head>
 <body>
 
-  <!-- ✅ HEADER -->
+  <!-- HEADER -->
   <header>
     <div class="logo-container">
       <img src="/images/logo.jpg" alt="CareerConnect Logo" class="header-logo">
@@ -133,7 +133,7 @@
     </div>
   </header>
 
-  <!-- ✅ DASHBOARD SECTION -->
+  <!-- DASHBOARD SECTION -->
   <div class="dashboard">
     <h2>Welcome, <span id="userName"></span> 👋</h2>
     <a href="user_apply.html" class="btn">Apply for New Job</a>
@@ -141,13 +141,13 @@
     <div id="statusList"></div>
   </div>
 
-  <!-- ✅ FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 CareerConnect. All Rights Reserved.</p>
   </footer>
 
   <script>
-    // 🟣 Display username
+    // Display username
     const user = localStorage.getItem("currentUser");
     if (!user) {
       alert("Please login first!");
@@ -156,7 +156,7 @@
       document.getElementById("userName").textContent = user;
     }
 
-    // 🟢 Load user applications
+    //Load user applications
     const apps = JSON.parse(localStorage.getItem("applications")) || [];
     const userApps = apps.filter(app => app.username === user);
     const list = document.getElementById("statusList");
@@ -175,7 +175,7 @@
       });
     }
 
-    // 🔴 Logout
+    // Logout
     function logout() {
       localStorage.removeItem("currentUser");
       alert("Logged out successfully!");
