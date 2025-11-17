@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | Employee Background Check</title>
+  <link rel="stylesheet" href="user.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    .contact-section {
+      text-align: center;
+      padding: 70px 10%;
+    }
+    .contact-section h2 {
+      font-family: "Orbitron", sans-serif;
+      font-size: 36px;
+      color: #5a2ea6;
+      margin-bottom: 25px;
+    }
+    .feedback-form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      text-align: left;
+    }
+    .feedback-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: 600;
+    }
+    .feedback-form input,
+    .feedback-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: "Poppins", sans-serif;
+    }
+    .feedback-form textarea {
+      resize: none;
+      height: 100px;
+    }
+    .feedback-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .feedback-buttons button {
+      background: linear-gradient(90deg, #6b35d0, #8a52ff);
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .feedback-buttons button:hover {
+      background: linear-gradient(90deg, #7a3ffc, #a178ff);
+      box-shadow: 0 3px 10px rgba(122, 63, 252, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <img src="/images/logo.jpg" alt="CareerConnect Logo" class="header-logo">
+      <div class="logo-text">CareerConnect</div>
+    </div>
+    <nav>
+      <a href="user_apply.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="user-icon">
+      <i class="fa-solid fa-user-circle"></i>
+    </div>
+  </header>
+
+  <!-- CONTACT CONTENT -->
+  <section class="contact-section">
+    <h2>We’d Love Your Feedback!</h2>
+    <form class="feedback-form" onsubmit="handleSubmit(event)">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="message">Your Feedback</label>
+      <textarea id="message" placeholder="Write your feedback..." required></textarea>
+
+      <div class="feedback-buttons">
+        <button type="submit">Submit</button>
+        <button type="button" onclick="handleClose()">Close</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="user_apply.html">Home</a><br>
+        <a href="about.html">About Us</a><br>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Email: info@backgroundcheck.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+
+      <div class="footer-section social-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons left">
+          <a href="#"><img src="/images/facebook.jpg" alt="Facebook"></a>
+          <a href="#"><img src="/images/linkedlin.jpg" alt="LinkedIn"></a>
+          <a href="#"><img src="/images/twitter.png" alt="Twitter"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-line"></div>
+    <p class="copy">© 2025 Employee Background Check Application. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert("Thank you for your feedback!");
+      document.querySelector(".feedback-form").reset();
+    }
+    function handleClose() {
+      window.location.href = "user_apply.html";
+    }
+  </script>
+
+</body>
+</html>

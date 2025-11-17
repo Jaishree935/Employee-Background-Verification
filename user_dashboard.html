@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CareerConnect | User Dashboard</title>
+  <link rel="stylesheet" href="user.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    /* DASHBOARD STYLING */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #6b35d0, #9b6bff, #ff8a00, #7b4fff);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .dashboard {
+      flex: 1;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .dashboard h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #ffeb3b;
+      text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .dashboard h3 {
+      margin-top: 40px;
+      color: #fff;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .btn, button {
+      background: linear-gradient(90deg, #6b35d0, #8a52ff);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin: 10px;
+      box-shadow: 0 4px 15px rgba(107, 53, 208, 0.4);
+    }
+
+    .btn:hover, button:hover {
+      background: linear-gradient(90deg, #ff8a00, #7b4fff);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 138, 0, 0.5);
+    }
+
+    /* Application status cards */
+    #statusList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .status-card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 15px;
+      width: 280px;
+      text-align: left;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .status-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .status-card h4 {
+      color: #ffeb3b;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .status-card p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #fff;
+    }
+
+    /* Footer fix */
+    footer {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px 0;
+      text-align: center;
+      color: #fff;
+      font-size: 14px;
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <img src="/Employee/images/logo.jpg" alt="CareerConnect Logo" class="header-logo">
+      <div class="logo-text">CareerConnect</div>
+    </div>
+    <nav>
+      <a href="user_apply.html">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="user-icon-login">
+      <i class="fa-solid fa-user-circle"></i>
+      <button class="login-btn" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <!-- DASHBOARD SECTION -->
+  <div class="dashboard">
+    <h2>Welcome, <span id="userName"></span> 👋</h2>
+    <a href="user_apply.html" class="btn">Apply for New Job</a>
+    <h3>Your Application Status</h3>
+    <div id="statusList"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 CareerConnect. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Display username
+    const user = localStorage.getItem("currentUser");
+    if (!user) {
+      alert("Please login first!");
+      window.location.href = "user_login.html";
+    } else {
+      document.getElementById("userName").textContent = user;
+    }
+
+    //Load user applications
+    const apps = JSON.parse(localStorage.getItem("applications")) || [];
+    const userApps = apps.filter(app => app.username === user);
+    const list = document.getElementById("statusList");
+
+    if (userApps.length === 0) {
+      list.innerHTML = "<p>No applications found. Apply for jobs to see status here!</p>";
+    } else {
+      userApps.forEach(app => {
+        const card = document.createElement("div");
+        card.classList.add("status-card");
+        card.innerHTML = `
+          <h4>${app.company}</h4>
+          <p><b>Status:</b> ${app.status}</p>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    // Logout
+    function logout() {
+      localStorage.removeItem("currentUser");
+      alert("Logged out successfully!");
+      window.location.href = "user_login.html";
+    }
+  </script>
+</body>
+</html>
